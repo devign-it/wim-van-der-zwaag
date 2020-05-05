@@ -1,7 +1,7 @@
 import React from "react";
 import get from "lodash/get";
 import { documentToReactComponents } from "@contentful/rich-text-react-renderer";
-
+import { graphql } from "gatsby";
 import Layout from "../components/Layout";
 
 import "../styles/pages/index.scss";
