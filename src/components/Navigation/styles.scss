@@ -1,0 +1,70 @@
+@import "../../styles/variables/variables";
+
+.main-navigation {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    position: fixed;
+    top: 0;
+    right: 0;
+    left: 0;
+    z-index: 100;
+
+    &:before {
+        content: "";
+        position: absolute;
+        height: 100%;
+        width: 100%;
+        left: 0;
+        top: 0;
+        bottom: 0;
+        z-index: -1;
+        background-image: linear-gradient(0, rgba(0, 0, 0, 0) 20%, $c-black 100%);
+    }
+
+    .col__right {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        width: 100%;
+    }
+
+    .navigation--links {
+        display: inline-flex;
+        flex-direction: row;
+        margin-right: $magicNumber / 3;
+        margin-top: 2px;
+
+        .main-navigation--item__new:not(:first-child) {
+            margin-left: $magicNumber / 3;
+        }
+    }
+
+    @media screen and (min-width: $tablet-breakpoint) {
+        padding: $magicNumber $magicNumber 0 $magicNumber;
+        .col__right {
+            width: initial;
+            justify-content: flex-end;
+        }
+        .information {
+            display: initial;
+        }
+        .navigation--links {
+            margin-top: 0px;
+            .home--link {
+                display: none;
+            }
+        }
+    }
+}
+
+body.light-mode {
+    .main-navigation__new {
+        background-color: $c-white;
+        border-bottom: 1px solid rgba($c-black, 0.15);
+        .typography__medium {
+            color: $c-black;
+        }
+    }
+}

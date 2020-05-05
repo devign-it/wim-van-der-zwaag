@@ -1,0 +1,43 @@
+@import "../../styles/variables/variables";
+
+.social-link--wrapper {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    height: 100%;
+
+    &.justify-end {
+        justify-content: flex-end;
+    }
+
+    &.inverted {
+        color: $c-black;
+
+        .external--links,
+        .internal--links {
+            a {
+                color: $c-black;
+            }
+        }
+    }
+    .internal--links {
+        display: none;
+    }
+    @media screen and (min-width: $tablet-breakpoint) {
+        justify-content: space-between;
+
+        .internal--links {
+            display: flex;
+            flex-direction: column;
+        }
+    }
+
+    .external--links {
+        display: flex;
+        flex-direction: column;
+        // margin-top: $magicNumber / 4;
+    }
+    .external--links {
+        justify-self: flex-end;
+    }
+}

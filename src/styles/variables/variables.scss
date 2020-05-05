@@ -1,0 +1,10 @@
+@import "colors.scss";
+@import "sizes.scss";
+@import "breakpoints.scss";
+@import "typography.scss";
+@import "links.scss";
+@import "animations.scss";
+@import "../mixins/typography2020.scss";
+
+$ease2020: cubic-bezier(0.77, 0, 0.175, 1);
+$column--width: $magicNumber;

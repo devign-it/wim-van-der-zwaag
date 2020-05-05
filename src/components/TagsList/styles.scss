@@ -1,0 +1,39 @@
+@import "../../styles/variables/variables";
+
+.tags--wrapper {
+    display: flex;
+    flex-wrap: wrap;
+    margin-top: $magicNumber / 4;
+    @media screen and (min-width: $tablet-breakpoint) {
+        margin-top: $magicNumber / 6;
+    }
+}
+.categoryTag {
+    display: inline-flex;
+    align-items: center;
+    padding: 0 $magicNumber / 8 $magicNumber / 8 0;
+    p {
+        color: $c-grey__medium;
+    }
+    @media screen and (min-width: $tablet-breakpoint) {
+        margin: 0 $magicNumber / 4 $magicNumber / 4 0;
+        p {
+            color: $c-green;
+            transition: color 480ms $t-smooth_one;
+        }
+    }
+}
+
+.info.dark-text {
+    .categoryTag {
+        border-color: $c-black;
+    }
+}
+
+body.light-mode {
+    .categoryTag {
+        p {
+            color: $c-blue;
+        }
+    }
+}

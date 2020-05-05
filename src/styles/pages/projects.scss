@@ -1,0 +1,89 @@
+@import "../variables/variables";
+
+.main-container.projects {
+    margin-top: $magicNumber;
+}
+.project-list {
+    margin-bottom: $magicNumber;
+    padding: $magicNumber / 2;
+
+    @media screen and (min-width: $tablet-breakpoint) {
+        padding: $magicNumber;
+    }
+}
+
+.project-item--wrapper {
+    perspective: 100vw;
+}
+
+.projects--container {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    width: 100%;
+
+    margin-top: $magicNumber / 3;
+
+    @media screen and (min-width: $tablet-breakpoint) {
+        margin-top: $magicNumber;
+    }
+}
+
+.swiper-container.white .project-item--description__text {
+    color: $c-white;
+    p a {
+        color: $c-white;
+
+        &:after,
+        &:before {
+            background-color: $c-white;
+        }
+    }
+}
+.swiper-container.black .project-item--description__text {
+    color: $c-black;
+    p a {
+        color: $c-black;
+
+        &:after,
+        &:before {
+            background-color: $c-black;
+        }
+    }
+}
+
+@media screen and (min-width: $tablet-breakpoint) {
+    .swiper-container.white .project-item--description__text {
+        background-color: $c-black;
+        color: $c-white;
+
+        p a {
+            color: $c-white;
+
+            &:after,
+            &:before {
+                background-color: $c-white;
+            }
+        }
+    }
+
+    .swiper-container.black .project-item--description__text {
+        background-color: $c-white;
+        color: $c-black;
+
+        p a {
+            color: $c-black;
+
+            &:after,
+            &:before {
+                background-color: $c-black;
+            }
+        }
+    }
+}
+
+body.light-mode {
+    .main-container.projects {
+        background-color: $c-grey__light;
+    }
+}

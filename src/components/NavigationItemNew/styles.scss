@@ -1,0 +1,15 @@
+@import "../../styles/variables/variables";
+
+.main-navigation--item__new {
+    &.isActive {
+        color: $c-green;
+    }
+}
+
+body.light-mode {
+    .main-navigation--item__new {
+        &.isActive {
+            color: $c-blue;
+        }
+    }
+}

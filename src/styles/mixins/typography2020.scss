@@ -1,0 +1,96 @@
+/* 2020 Typography */
+
+@mixin typography__block-small {
+    font-family: $font--sans;
+    font-size: 10px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    @media screen and (min-width: $tablet-breakpoint) {
+        font-size: 12px;
+        letter-spacing: 2px;
+    }
+}
+
+@mixin typography__block {
+    font-family: $font--sans;
+    font-size: 12px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    @media screen and (min-width: $tablet-breakpoint) {
+        font-size: 16px;
+        letter-spacing: 2px;
+    }
+}
+
+@mixin typography__block-large {
+    font-family: $font--sans;
+    font-size: 15px;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+
+    @media screen and (min-width: $tablet-breakpoint) {
+        font-size: 18px;
+        // letter-spacing: 1px;
+    }
+}
+
+@mixin typography__block-xlarge {
+    font-family: $font--sans;
+    font-size: 18px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+
+    @media screen and (min-width: $tablet-breakpoint) {
+        font-size: 24px;
+        line-height: 1.5;
+        // letter-spacing: 1px;
+    }
+}
+
+@mixin typography__medium {
+    font-family: $font--sans;
+    font-size: 18px;
+    line-height: 1.5;
+    @media screen and (min-width: $tablet-breakpoint) {
+        font-size: 24px;
+    }
+}
+
+@mixin typography__large {
+    font-family: $font--sans;
+    font-weight: initial;
+    font-size: 24px;
+    line-height: 1.4;
+    @media screen and (min-width: $tablet-breakpoint) {
+        font-size: 40px;
+    }
+}
+
+@mixin typography__extralarge {
+    font-family: $font--sans;
+    font-weight: initial;
+    font-size: 24px;
+    line-height: 1.4;
+    @media screen and (min-width: $tablet-breakpoint) {
+        font-size: 54px;
+    }
+}
+
+@mixin typography__title-large {
+    font-family: $font--serif;
+    font-size: calc(42px + 0.2vw);
+    @media screen and (min-width: $tablet-breakpoint) {
+        font-size: calc(100px + 0.2vw);
+    }
+}
+
+@mixin title__xl {
+    font-family: $font--sans;
+    font-size: calc(24px + 0.2vw);
+    margin: 0;
+    line-height: 1.4;
+
+    @media screen and (min-width: $tablet-breakpoint) {
+        font-size: calc(40px + 0.2vw);
+    }
+}

@@ -1,0 +1,21 @@
+@import "../../styles/variables/variables";
+
+.post--navigation {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: center;
+    margin: 0;
+    z-index: 15;
+    border-radius: inherit;
+    height: $magicNumber;
+    overflow: hidden;
+    border: 1px solid $c-white;
+    margin: $magicNumber / 2;
+
+    @media screen and (min-width: $tablet-breakpoint) {
+        border: 1px solid $c-white;
+        margin: $magicNumber;
+        height: $heightNavigation;
+    }
+}

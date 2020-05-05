@@ -1,0 +1,19 @@
+@import "../../styles/variables/variables";
+
+a.link-button__inline {
+    margin-bottom: $magicNumber / 8;
+
+    @media screen and (min-width: $desktop-breakpoint) {
+        display: inline-block;
+    }
+}
+.social-link--wrapper {
+    display: flex;
+    flex-direction: column;
+}
+
+body.light-mode {
+    a.link-button__inline {
+        color: $c-black;
+    }
+}

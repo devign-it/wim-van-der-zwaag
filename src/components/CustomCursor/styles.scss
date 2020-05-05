@@ -1,0 +1,66 @@
+@import "../../styles/variables/variables";
+
+body {
+    @media screen and (max-width: $desktop-breakpoint) {
+        .circle-cursor {
+            &--outer,
+            &--inner {
+                display: none;
+            }
+        }
+    }
+    @media screen and (min-width: $desktop-breakpoint) {
+        cursor: none;
+
+        &,
+        a {
+            cursor: none;
+        }
+        .circle-cursor {
+            &--outer,
+            &--inner {
+                display: initial;
+            }
+        }
+    }
+}
+
+.circle-cursor {
+    position: fixed;
+    left: 0;
+    top: 0;
+    pointer-events: none;
+    border-radius: 50%;
+    z-index: 20;
+    // mix-blend-mode: exclusion;
+
+    &--outer {
+        width: $magicNumber / 1.5;
+        height: $magicNumber / 1.5;
+        border: 1px solid $c-green;
+        z-index: 12000;
+        opacity: 0.2;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+    &--inner {
+        width: $magicNumber / 8;
+        height: $magicNumber / 8;
+        left: -$magicNumber / 16;
+        top: -$magicNumber / 16;
+        z-index: 11000;
+        background: $c-white;
+    }
+}
+
+body.light-mode {
+    .circle-cursor {
+        &--inner {
+            background: $c-blue !important;
+        }
+        &--outer {
+            border-color: $c-blue;
+        }
+    }
+}

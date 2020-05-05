@@ -1,0 +1,64 @@
+@import "../../styles/variables/variables";
+
+.information {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    &.inverted {
+        .author {
+            a {
+                color: $c-black;
+            }
+        }
+        .subtitle {
+            color: $c-grey__light;
+        }
+    }
+    &.column {
+        flex-direction: column;
+        height: 100%;
+    }
+    * {
+    }
+    .author,
+    .subtitle {
+        margin: 0;
+    }
+    .author {
+        color: $c-black;
+    }
+    .subtitle {
+        color: $c-grey__dark;
+    }
+    @media screen and (min-width: $tablet-breakpoint) {
+        flex-direction: row;
+    }
+}
+
+.author,
+.quote {
+    margin: 0;
+    z-index: 9;
+}
+
+.author {
+    a {
+        color: $c-white;
+        text-decoration: none;
+        .name {
+            display: inline;
+        }
+        .jobtitle {
+            display: none;
+        }
+        &:hover {
+            .name {
+                display: none;
+            }
+            .jobtitle {
+                display: inline;
+            }
+        }
+    }
+}
