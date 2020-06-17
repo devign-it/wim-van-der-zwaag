@@ -1,39 +1,40 @@
-import React from "react";
-import { Link } from "gatsby";
-import ProjectPreview from "../ProjectPreview";
-import { ButtonWide } from "../Buttons";
-import "./styles.scss";
+// import React from "react";
+// import { Link } from "gatsby";
+// import ProjectPreview from "../ProjectPreview";
+// import { ButtonWide } from "../Buttons";
+// import "./styles.scss";
 
-class ProjectsRoll extends React.Component {
-    render() {
-        let orginalProjects = this.props.items;
-        let limitedProjects = orginalProjects.slice(0, 4);
-        let mappedProjects = orginalProjects;
+// class ProjectsRoll extends React.Component {
+//   render() {
+//     return (
+//       <div className="projects-preview-list--wrapper">
+//         <ProjectPreview
+//           title={"Creating a new digital Identity"}
+//           client={"Gemeente Den haag"}
+//         />
+//         <ProjectPreview
+//           title={"Creating a new digital Identity"}
+//           client={"Gemeente Den haag"}
+//         />
+//         <ProjectPreview
+//           title={"Creating a new digital Identity"}
+//           client={"Gemeente Den haag"}
+//         />
+//         <ProjectPreview
+//           title={"Creating a new digital Identity"}
+//           client={"Gemeente Den haag"}
+//         />
+//         <ProjectPreview
+//           title={"Creating a new digital Identity"}
+//           client={"Gemeente Den haag"}
+//         />
+//         <ProjectPreview
+//           title={"Creating a new digital Identity"}
+//           client={"Gemeente Den haag"}
+//         />
+//       </div>
+//     );
+//   }
+// }
 
-        if (this.props.showButton) {
-            mappedProjects = limitedProjects;
-        }
-
-        return (
-            <section className="project-list">
-                {mappedProjects.map(({ node }) => {
-                    return (
-                        <article className="project-item--wrapper" key={node.slug}>
-                            <ProjectPreview project={node} />
-                        </article>
-                    );
-                })}
-                {this.props.showButton && (
-                    <ButtonWide
-                        inverted={false}
-                        text={"See all " + orginalProjects.length + " projects"}
-                        to="/projects"
-                        internal
-                    ></ButtonWide>
-                )}
-            </section>
-        );
-    }
-}
-
-export default ProjectsRoll;
+// export default ProjectsRoll;

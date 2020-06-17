@@ -1,105 +1,199 @@
 @import "../../styles/variables/variables";
 
-.preview-wrapper {
-    position: relative;
-    margin-bottom: $magicNumber;
-
-    @media screen and (min-width: $tablet-breakpoint) {
-        margin-bottom: $magicNumber * 2;
-
-        &:hover {
-            .project-post--preview {
-                clip-path: inset($magicNumber / 2);
-            }
-            .project-post--info {
-                top: -30px;
-                left: 30px;
-            }
-            .categoryTag {
-                p {
-                    color: $c-green;
-                    transition: color 320ms $t-smooth_one;
-                }
-            }
-        }
+.preview-link {
+  text-decoration: none;
+  color: inherit;
+  &:nth-child(even) {
+    .project-post--preview {
+      &:before {
+        background-color: white;
+      }
     }
     .project-post--info {
-        margin-top: $magicNumber / 3;
-        transition: all 320ms $t-smooth_one;
-        position: relative;
-        top: 0;
-        left: 0;
-
-        .item--name {
-            margin: 0;
-            @include typography__medium;
-        }
-        @media screen and (min-width: $tablet-breakpoint) {
-            margin-top: $magicNumber / 2;
-        }
+      color: black;
     }
+  }
 }
-.preview-link {
-    width: auto;
-    height: auto;
-    display: block;
-}
-.project-post--preview {
+.preview-wrapper {
+  width: 100%;
+  max-width: 50vh;
+  height: 50vh;
+  position: relative;
+  display: flex;
+
+  .project-post--preview {
     width: 100%;
-    height: auto;
-    display: flex;
-    flex-wrap: no-wrap;
-    flex-direction: column;
-    justify-content: space-between;
-    align-items: center;
-    background-color: rgba($c-white, 0.5);
-    transition: all 420ms $t-smooth_one;
+    height: 100%;
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    z-index: 0;
     overflow: hidden;
-
-    height: calc(100vw - #{$magicNumber} * 3);
-    max-height: $magicNumber * 4;
-
-    clip-path: inset(0);
-
-    transition: clip-path 320ms $t-smooth_one;
-
-    @media screen and (min-width: $tablet-breakpoint) {
-        flex-direction: row;
-        flex-wrap: wrap;
-        align-items: flex-end;
-        max-height: initial;
-        height: calc(100vh - #{$magicNumber} * 3.5);
-        padding: 0;
+    &:before {
+      background-color: black;
+      width: 100%;
+      height: 100%;
+      position: absolute;
+      left: 0;
+      right: 0;
+      top: 0;
+      bottom: 0;
+      z-index: 1;
+      content: "";
+      transition: all 320ms ease-in-out;
     }
-
     .image {
-        transition: all 420ms $t-smooth_one;
+      transition: all 420ms $t-smooth_one;
 
-        position: relative;
-        width: 100%;
+      position: relative;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transform: scale(1);
+
+      .gatsby-image-wrapper {
         height: 100%;
         object-fit: cover;
-
-        .gatsby-image-wrapper {
-            height: 100%;
-            object-fit: cover;
-        }
+      }
     }
+  }
+  .project-post--info {
+    position: relative;
+    z-index: 1;
+    padding: $magicNumber;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    .item--title {
+      width: 100%;
+      white-space: break-spaces;
+      h3 {
+        color: white;
+      }
+    }
+    .item--tags {
+      display: none;
+    }
+  }
+
+  &:hover {
+    .project-post--preview {
+      &:before {
+        background-color: black;
+        opacity: 0.5;
+      }
+      .image {
+        transform: scale(1.05);
+      }
+    }
+    .project-post--info {
+      z-index: 10;
+      color: white;
+    }
+  }
+
+  //     margin-bottom: $magicNumber;
+
+  //     @media screen and (min-width: $tablet-breakpoint) {
+  //         margin-bottom: $magicNumber * 2;
+
+  //         &:hover {
+  //             .project-post--preview {
+  //                 clip-path: inset($magicNumber / 2);
+  //             }
+  //             .project-post--info {
+  //                 top: -30px;
+  //                 left: 30px;
+  //             }
+  //             .categoryTag {
+  //                 p {
+  //                     color: $c-green;
+  //                     transition: color 320ms $t-smooth_one;
+  //                 }
+  //             }
+  //         }
+  //     }
+  //     .project-post--info {
+  //         margin-top: $magicNumber / 3;
+  //         transition: all 320ms $t-smooth_one;
+  //         position: relative;
+  //         top: 0;
+  //         left: 0;
+
+  //         .item--name {
+  //             margin: 0;
+  //             @include typography__medium;
+  //         }
+  //         @media screen and (min-width: $tablet-breakpoint) {
+  //             margin-top: $magicNumber / 2;
+  //         }
+  //     }
+  // }
+  // .preview-link {
+  //     width: auto;
+  //     height: auto;
+  //     display: block;
+  // }
+  // .project-post--preview {
+  //     width: 100%;
+  //     height: auto;
+  //     display: flex;
+  //     flex-wrap: no-wrap;
+  //     flex-direction: column;
+  //     justify-content: space-between;
+  //     align-items: center;
+  //     background-color: rgba($c-white, 0.5);
+  //     transition: all 420ms $t-smooth_one;
+  //     overflow: hidden;
+
+  //     height: calc(100vw - #{$magicNumber} * 3);
+  //     max-height: $magicNumber * 4;
+
+  //     clip-path: inset(0);
+
+  //     transition: clip-path 320ms $t-smooth_one;
+
+  //     @media screen and (min-width: $tablet-breakpoint) {
+  //         flex-direction: row;
+  //         flex-wrap: wrap;
+  //         align-items: flex-end;
+  //         max-height: initial;
+  //         height: calc(100vh - #{$magicNumber} * 3.5);
+  //         padding: 0;
+  //     }
+
+  //     .image {
+  //         transition: all 420ms $t-smooth_one;
+
+  //         position: relative;
+  //         width: 100%;
+  //         height: 100%;
+  //         object-fit: cover;
+
+  //         .gatsby-image-wrapper {
+  //             height: 100%;
+  //             object-fit: cover;
+  //         }
+  //     }
 }
 
 body.light-mode {
-    .project-post--info {
-        .item--name {
-            color: $c-black;
-        }
+  .project-post--info {
+    .item--name {
+      color: $c-black;
     }
-    .preview-wrapper {
-        &:hover {
-            .categoryTag {
-                p {
-                    color: $c-blue;
-                }
-            }
+  }
+  .preview-wrapper {
+    &:hover {
+      .categoryTag {
+        p {
+          color: $c-blue;
         }
+      }
     }
+  }
 }

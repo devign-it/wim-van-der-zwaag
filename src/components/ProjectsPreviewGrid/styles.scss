@@ -1,0 +1,14 @@
+@import "../../styles/variables/variables";
+
+.scroll .scroll-content .slide.slide--3 {
+  min-width: 150vh;
+}
+.projects-preview-grid--wrapper {
+  //   display: flex;
+  //   flex-direction: row;
+  //   flex-wrap: wrap;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-template-rows: 1fr 1fr;
+  width: 150vh;
+}
